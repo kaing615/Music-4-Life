@@ -10,6 +10,9 @@ const AudioPlayer = ({ currentIndex, setCurrentIndex, total }) => {
   const location = useLocation();
   const playlist = location.state?.playlist || null;
   const songFromTrending = location.state?.song || null;
+  const [volume, setVolume] = useState(1);
+  const [prevVolume, setPrevVolume] = useState(1); // Lưu âm lượng trước khi tắt
+  const [isMuted, setIsMuted] = useState(false);
 
   const [isPlaying, setIsPlaying] = useState(true);
   const [trackProgress, setTrackProgress] = useState(0);
@@ -34,6 +37,44 @@ const AudioPlayer = ({ currentIndex, setCurrentIndex, total }) => {
   useEffect(() => {
     console.log("Bài hát hiện tại:", currentTrack);
   }, [currentTrack]);
+
+  const handleVolumeChange = (e) => {
+    const newVolume = parseFloat(e.target.value);
+    setVolume(newVolume);
+    setIsMuted(newVolume === 0); // Nếu volume = 0 thì đặt isMuted = true
+
+    if (youtubeID && youtubeRef.current) {
+      youtubeRef.current.internalPlayer.setVolume(newVolume * 100);
+    } else {
+      audioRef.current.volume = newVolume;
+    }
+  };
+
+  const toggleMute = () => {
+    if (isMuted) {
+      // Bật lại âm lượng trước đó
+      setVolume(prevVolume);
+      if (youtubeID && youtubeRef.current) {
+        youtubeRef.current.internalPlayer.setVolume(prevVolume * 100);
+      } else {
+        audioRef.current.volume = prevVolume;
+      }
+    } else {
+      // Lưu lại mức âm lượng hiện tại và tắt âm
+      setPrevVolume(volume);
+      setVolume(0);
+      if (youtubeID && youtubeRef.current) {
+        youtubeRef.current.internalPlayer.setVolume(0);
+      } else {
+        audioRef.current.volume = 0;
+      }
+    }
+    setIsMuted(!isMuted);
+  };
+
+  useEffect(() => {
+    audioRef.current.volume = volume;
+  }, []);
 
   useEffect(() => {
     if (currentTrack) {
@@ -178,6 +219,20 @@ const AudioPlayer = ({ currentIndex, setCurrentIndex, total }) => {
             hasPrev={hasPrev}
             hasNext={hasNext}
           />
+          <div className="volume-control flex">
+            <span onClick={toggleMute} style={{ cursor: "pointer" }}>
+              {isMuted ? "🔇" : "🔊"}
+            </span>
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value={volume}
+              onChange={handleVolumeChange}
+              className="volume-slider"
+            />
+          </div>
         </div>
       </div>
     </div>

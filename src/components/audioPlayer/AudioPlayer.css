@@ -80,4 +80,16 @@
     margin-top: 20px;
   }
   
+  .volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .volume-slider {
+    width: 200px;
+    cursor: pointer;
+  }
+  
   
