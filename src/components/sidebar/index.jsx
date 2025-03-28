@@ -6,7 +6,6 @@ import { FaGripfire, FaPlay } from "react-icons/fa";
 import { FaSignOutAlt } from "react-icons/fa";
 import { IoLibrary } from "react-icons/io5";
 import { MdSpaceDashboard } from "react-icons/md";
-import apiClient from "../../../spotify";
 import { FaSpotify } from "react-icons/fa";
 import { FaMusic } from "react-icons/fa";
 import { useNavigate } from "react-router";

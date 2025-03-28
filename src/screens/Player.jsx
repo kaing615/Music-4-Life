@@ -5,7 +5,6 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import AudioPlayer from "../components/audioPlayer";
 import Queue from "../components/queue";
 import SongCard from "../components/songCard";
-import apiClient from "../../spotify";
 import "./Player.css";
 
 const Player = () => {
