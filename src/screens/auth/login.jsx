@@ -5,10 +5,10 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    const fakeToken = "ndt_project_token"; // Giả lập token
-    localStorage.setItem("token", fakeToken); // Lưu token vào localStorage
-    navigate("/"); // Chuyển hướng về trang Library
-    window.location.reload(); // Reload để App cập nhật state
+    const uniqueToken = crypto.randomUUID(); // Tạo token ngẫu nhiên
+    localStorage.setItem("token", uniqueToken); // Lưu vào localStorage
+    navigate("/"); // Chuyển hướng về Library
+    window.location.reload();
   };
 
   return (
