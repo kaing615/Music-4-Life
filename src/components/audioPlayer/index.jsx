@@ -11,7 +11,7 @@ const AudioPlayer = ({ currentIndex, setCurrentIndex, total }) => {
   const playlist = location.state?.playlist || null;
   const songFromTrending = location.state?.song || null;
   const [volume, setVolume] = useState(1);
-  const [prevVolume, setPrevVolume] = useState(1); // Lưu âm lượng trước khi tắt
+  const [prevVolume, setPrevVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
 
   const [isPlaying, setIsPlaying] = useState(true);
@@ -41,7 +41,7 @@ const AudioPlayer = ({ currentIndex, setCurrentIndex, total }) => {
   const handleVolumeChange = (e) => {
     const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
-    setIsMuted(newVolume === 0); // Nếu volume = 0 thì đặt isMuted = true
+    setIsMuted(newVolume === 0);
 
     if (youtubeID && youtubeRef.current) {
       youtubeRef.current.internalPlayer.setVolume(newVolume * 100);
@@ -52,7 +52,6 @@ const AudioPlayer = ({ currentIndex, setCurrentIndex, total }) => {
 
   const toggleMute = () => {
     if (isMuted) {
-      // Bật lại âm lượng trước đó
       setVolume(prevVolume);
       if (youtubeID && youtubeRef.current) {
         youtubeRef.current.internalPlayer.setVolume(prevVolume * 100);
@@ -60,7 +59,6 @@ const AudioPlayer = ({ currentIndex, setCurrentIndex, total }) => {
         audioRef.current.volume = prevVolume;
       }
     } else {
-      // Lưu lại mức âm lượng hiện tại và tắt âm
       setPrevVolume(volume);
       setVolume(0);
       if (youtubeID && youtubeRef.current) {
