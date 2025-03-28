@@ -36,12 +36,12 @@ const songs = [
     },
     {
       id: 5,
-      name: "Industry Baby",
-      artist: "Lil Nas X",
+      name: "Old Town Road",
+      artist: "Lil Nas X ft. Billy Ray Cyrus",
       cover:
-        "https://wallpapers.com/images/hd/lil-nas-x-industry-baby-clip-ywyxlbbwbb9xdgwj.jpg",
-      duration: "3:32",
-      youtubeID: "UTHLKHL_whs",
+        "https://wallpaperaccess.com/full/1408706.jpg",
+      duration: "2:37",
+      youtubeID: "r7qovpFAGrQ",
     },
     {
       id: 6,
@@ -54,39 +54,39 @@ const songs = [
     },
     {
       id: 7,
-      name: "Good 4 U",
-      artist: "Olivia Rodrigo",
+      name: "Shape Of You",
+      artist: "Ed Sheeran",
       cover:
-        "https://th.bing.com/th/id/OIP.u_MK9J5gbqof3Yxhcd4UagHaHa?rs=1&pid=ImgDetMain",
-      duration: "2:58",
-      youtubeID: "gNi_6U5Pm_o",
+        "https://images.genius.com/86dcab92e27599f8556b5b8f21932449.1000x1000x1.png",
+      duration: "3:51",
+      youtubeID: "liTfD88dbCo",
     },
     {
       id: 8,
-      name: "Heat Waves",
-      artist: "Glass Animals",
+      name: "Mất Kết Nối",
+      artist: "Dương Domic",
       cover:
-        "https://images.genius.com/25ffad8f4a6804e3efc869253f030baf.1000x1000x1.jpg",
-      duration: "3:59",
-      youtubeID: "mRD0-GxqHVo",
+        "https://th.bing.com/th/id/OIP.4foGMQv3IA2c9nwSen79QAHaEK?w=312&h=180&c=7&r=0&o=5&pid=1.7",
+      duration: "3:27",
+      youtubeID: "lRsaDQtYqAo",
     },
     {
       id: 9,
-      name: "Montero (Call Me By Your Name)",
-      artist: "Lil Nas X",
+      name: "[XHTDRLX3] Phonecert (폰서트)",
+      artist: "10CM (십센치) x Hoàng Dũng",
       cover:
-        "https://th.bing.com/th/id/OIP.GcHbcFJ02C9HNrK4ZzaVyQHaJO?rs=1&pid=ImgDetMain",
-      duration: "2:17",
-      youtubeID: "6swmTBVI83k",
+        "https://i.ytimg.com/vi/XFVNxCs97ys/hqdefault.jpg?sqp=-oaymwEmCKgBEF5IWvKriqkDGQgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAE=&rs=AOn4CLAM92AMwc9PvJ9OPzYsEfVCUg2ViA",
+      duration: "3:33",
+      youtubeID: "XFVNxCs97ys",
     },
     {
       id: 10,
-      name: "Kiss Me More",
-      artist: "Doja Cat ft. SZA",
+      name: "Từng Ngày Yêu Em (Acoustic)",
+      artist: "buitruonglinh",
       cover:
-        "https://th.bing.com/th/id/OIP.ZJC4qxkHffAyvV8sy-b0yQHaHa?rs=1&pid=ImgDetMain",
-      duration: "3:28",
-      youtubeID: "0EVVKs6DQLo",
+        "https://i.ytimg.com/vi/f-VsoLm4i5c/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLA51jhmWMe8qAxqef54m3370Rj3Zg",
+      duration: "4:16",
+      youtubeID: "DEHFZYaX5e8",
     },
     {
       id: 11,
@@ -176,6 +176,33 @@ const songs = [
         "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e3/0b/38/e30b383e-5818-321a-7626-557b7b0f8ba3/24UMGIM61359.rgb.jpg/1200x1200bf-60.jpg",
       duration: "5:25",
       youtubeID: "abPmZCZZrFA",
+    },
+    {
+      id: 21,
+      name: "Một Tình Yêu Hai Thử Thách (MiniC x Sado Remix)",
+      artist: "Luân Ken",
+      cover:
+        "https://i.ytimg.com/an_webp/kFM6C-M7zmo/mqdefault_6s.webp?du=3000&sqp=CIrLmr8G&rs=AOn4CLDdO9yxSyJ7WjiUasNrpuhUsw3FYg",
+      duration: "3:26",
+      youtubeID: "kFM6C-M7zmo",
+    },
+    {
+      id: 22,
+      name: "Mở Lối Cho Em 2 (OXI Remix)",
+      artist: "Lương Quý Tuấn ft An Clock x H2O",
+      cover:
+        "https://tse1.mm.bing.net/th?&id=OVP.Wt8UpXMxNY2F_rfPJPG7xQHgFo&w=528&h=298&c=7&pid=1.7&rs=1",
+      duration: "3:46",
+      youtubeID: "G_uEUcJiY90",
+    },
+    {
+      id: 23,
+      name: "Để Anh Lương Thiện (HUY PT REMIX)",
+      artist: "Linh Hương Luz Cover",
+      cover:
+        "https://i.ytimg.com/vi/AuxULopbguY/hq720.jpg?sqp=-oaymwFBCNAFEJQDSFryq4qpAzMIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB8AEB-AH-CYAC0AWKAgwIABABGEAgUShlMA8=&rs=AOn4CLB705DP4_WoiKkyRYrrxx5jbQyROg",
+      duration: "3:18",
+      youtubeID: "AuxULopbguY",
     },
   ];
 
