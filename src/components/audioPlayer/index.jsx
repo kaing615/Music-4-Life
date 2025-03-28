@@ -205,6 +205,7 @@ const AudioPlayer = ({ currentIndex, setCurrentIndex, total }) => {
               }}
               onPlay={() => setIsYouTubePlaying(true)}
               onPause={() => setIsYouTubePlaying(false)}
+              onEnd={handleNext}
             />
           ) : (
             <WaveAnimation isPlaying={isPlaying} />
