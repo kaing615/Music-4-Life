@@ -206,12 +206,12 @@ const songs = [
     },
     {
       id: 24,
-      name: "Để Anh Lương Thiện (HUY PT REMIX)",
-      artist: "Linh Hương Luz Cover",
+      name: "Em Không Quay Về",
+      artist: "Hoàng Tôn ft YANBI",
       cover:
-        "https://i.ytimg.com/vi/AuxULopbguY/hq720.jpg?sqp=-oaymwFBCNAFEJQDSFryq4qpAzMIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB8AEB-AH-CYAC0AWKAgwIABABGEAgUShlMA8=&rs=AOn4CLB705DP4_WoiKkyRYrrxx5jbQyROg",
-      duration: "3:18",
-      youtubeID: "AuxULopbguY",
+        "https://i.ytimg.com/vi/PxLtYcHWWrQ/maxresdefault.jpg",
+      duration: "4:36",
+      youtubeID: "ZlSx-6UbrmI",
     },
   ];
 
