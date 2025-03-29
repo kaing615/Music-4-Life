@@ -15,7 +15,7 @@ export default function Login() {
     <div className="bg-[#1E2A3E] h-[100vh] w-[100vw] flex flex-col items-center justify-center overflow-hidden">
       <button
         onClick={handleLogin}
-        className="w-[320px] h-[80px] text-center bg-gradient-to-r from-[#2a3a56] to-[#332b72] text-white text-3xl font-bold rounded-full shadow-lg transition-transform transform hover:scale-110 hover:shadow-2xl active:scale-95 cursor-pointer"
+        className="w-[320px] h-[80px] text-center bg-gradient-to-r from-[#491aca] to-[#5244b7] text-white text-3xl font-bold rounded-full shadow-lg transition-transform transform hover:scale-110 hover:shadow-2xl active:scale-95 cursor-pointer"
       >
         🎵 Nghe nhạc ngay
       </button>
