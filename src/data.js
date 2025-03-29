@@ -182,7 +182,7 @@ const songs = [
       name: "Một Tình Yêu Hai Thử Thách (MiniC x Sado Remix)",
       artist: "Luân Ken",
       cover:
-        "https://i.ytimg.com/an_webp/kFM6C-M7zmo/mqdefault_6s.webp?du=3000&sqp=CIrLmr8G&rs=AOn4CLDdO9yxSyJ7WjiUasNrpuhUsw3FYg",
+        "https://i.ytimg.com/vi/kFM6C-M7zmo/hqdefault.jpg?sqp=-oaymwFACKgBEF5IWvKriqkDMwgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAHwAQH4Af4JgALQBYoCDAgAEAEYZSBNKE8wDw==&rs=AOn4CLCsf8awoz1pVyqcRj3zUu5rgwjrfw",
       duration: "3:26",
       youtubeID: "kFM6C-M7zmo",
     },
@@ -197,6 +197,15 @@ const songs = [
     },
     {
       id: 23,
+      name: "Để Anh Lương Thiện (HUY PT REMIX)",
+      artist: "Linh Hương Luz Cover",
+      cover:
+        "https://i.ytimg.com/vi/AuxULopbguY/hq720.jpg?sqp=-oaymwFBCNAFEJQDSFryq4qpAzMIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB8AEB-AH-CYAC0AWKAgwIABABGEAgUShlMA8=&rs=AOn4CLB705DP4_WoiKkyRYrrxx5jbQyROg",
+      duration: "3:18",
+      youtubeID: "AuxULopbguY",
+    },
+    {
+      id: 24,
       name: "Để Anh Lương Thiện (HUY PT REMIX)",
       artist: "Linh Hương Luz Cover",
       cover:
