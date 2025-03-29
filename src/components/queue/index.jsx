@@ -19,7 +19,9 @@ const Queue = ({ tracks, setCurrentIndex, currentIndex }) => {
               }`}
               onClick={() => setCurrentIndex(index)}
             >
-              <p className="track-name">{track?.name}</p>
+              <p className="track-name">
+                <span className="marquee-text">{track?.name}</span>
+              </p>
               <p className="track-artist">{track?.artist}</p>
             </div>
           ))}

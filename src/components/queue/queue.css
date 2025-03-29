@@ -90,6 +90,28 @@
 
 .track-name {
   width: 75%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  transition: transform 5s linear;
+}
+
+.track-name:hover .marquee-text {
+  animation: marquee 5s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .track-artist {
