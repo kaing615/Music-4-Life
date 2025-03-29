@@ -33,6 +33,39 @@ const AudioPlayer = ({ currentIndex, setCurrentIndex, total }) => {
 
   const hasPrev = currentIndex > 0;
   const hasNext = currentIndex < tracks.length - 1;
+  const workerRef = useRef(null);
+
+  useEffect(() => {
+    // Tạo Web Worker bằng Blob
+    const workerScript = `
+      let timer;
+      self.onmessage = function (e) {
+        if (e.data === "start") {
+          timer = setInterval(() => self.postMessage("tick"), 1000);
+        } else if (e.data === "stop") {
+          clearInterval(timer);
+        }
+      };
+    `;
+    const blob = new Blob([workerScript], { type: "application/javascript" });
+    workerRef.current = new Worker(URL.createObjectURL(blob));
+
+    workerRef.current.onmessage = () => {
+      if (audioRef.current && !audioRef.current.paused) {
+        setTrackProgress(audioRef.current.currentTime);
+        if (audioRef.current.ended) {
+          handleNext();
+        }
+      }
+    };
+
+    return () => {
+      workerRef.current.terminate();
+    };
+  }, []);
+
+  const startWorker = () => workerRef.current.postMessage("start");
+  const stopWorker = () => workerRef.current.postMessage("stop");
 
   useEffect(() => {
     console.log("Bài hát hiện tại:", currentTrack);
@@ -132,14 +165,15 @@ const AudioPlayer = ({ currentIndex, setCurrentIndex, total }) => {
   }, []);
 
   const startTimer = () => {
-    clearInterval(intervalRef.current);
+    clearInterval(intervalRef.current); // Xóa timer cũ nếu có
+
     intervalRef.current = setInterval(() => {
       if (audioRef.current.ended) {
         handleNext();
       } else {
         setTrackProgress(audioRef.current.currentTime);
       }
-    }, 1000);
+    }, 1000); // Kiểm tra mỗi giây
   };
 
   const handleNext = () => {
@@ -164,9 +198,11 @@ const AudioPlayer = ({ currentIndex, setCurrentIndex, total }) => {
         if (isYouTubePlaying) {
           youtubeRef.current.internalPlayer.pauseVideo();
           setIsPlaying(false);
+          stopWorker();
         } else {
           youtubeRef.current.internalPlayer.playVideo();
           setIsPlaying(true);
+          startWorker();
         }
       }
       setIsYouTubePlaying(!isYouTubePlaying);

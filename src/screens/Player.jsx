@@ -33,7 +33,6 @@ const Player = () => {
     }
   }, [playlist, songFromTrending]);
 
-  // Cập nhật bài hát hiện tại khi đổi index
   useEffect(() => {
     if (
       tracks.length > 0 &&
@@ -84,6 +83,7 @@ const Player = () => {
                 total={tracks}
                 currentIndex={currentIndex}
                 setCurrentIndex={setCurrentIndex}
+                onEnd={"/trending"}
               />
             </div>
           ) : (
